@@ -236,7 +236,7 @@ macro(set_shared_library_export_map TARGET DIR)
         set_property(TARGET ${TARGET} APPEND_STRING PROPERTY LINK_DEPENDS "${DIR}/${TARGET}.lds;")
 
         # Don't allow symbols to be overridden by another module.
-        set_property(TARGET ${TARGET} APPEND_STRING PROPERTY COMPILE_FLAGS " -fvisibility=protected")
+	# set_property(TARGET ${TARGET} APPEND_STRING PROPERTY COMPILE_FLAGS " -fvisibility=protected")
 
         if(ARCH STREQUAL "mipsel" OR ARCH STREQUAL "mips64el")
           # MIPS supports sysv hash-style only.
